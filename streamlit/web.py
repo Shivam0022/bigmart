@@ -21,14 +21,14 @@ column_parameter,target = train_dataset(main_dataset)
 # fitting model
 regressor=XGBRFRegressor()
 regressor.fit(column_parameter,target)
-
+# Main page 
 st.header("BigMart Sales Prediction",divider="rainbow")
 st.image("/workspace/bigmart/image/WhatsApp Image 2023-09-23 at 3.29.51 PM.jpeg")
 st.subheader("**:red[Build by Shiv Kumar]**")
 st.divider()
 # Sidebar
 st.sidebar.title("Parameters")
-item_identifier_value = st.sidebar.selectbox("Item Identifier",list(range(0,1558)))
+Item_identifier_value = st.sidebar.selectbox("Item Identifier",list(range(0,1558)))
 Item_Weight_value = st.sidebar.slider("Item Weight",4.55,21.35)
 Item_Fat_Content_value = st.sidebar.radio("Item Fat Content",("Low Fat","Regular Fat"))
 if Item_Fat_Content_value == "Low Fat":
@@ -43,9 +43,9 @@ Outlet_Establishment_Year_value = st.sidebar.selectbox("Outlet Establishment Yea
 Outlet_Size_value = st.sidebar.slider("Outlet Size",0,2)
 Outlet_Location_type_value = st.sidebar.slider("Outlet Location type",0,2)
 Outlet_type_value = st.sidebar.slider("Outlet type",0,3)
-#Item_Outlet_Sales_value = st.sidebar.slider("Item Outlet Sales",33.29,13086.96)
 
-parameters_values = [item_identifier_value,Item_Weight_value,Item_Fat_Content_value_main,Item_Visibility_value,Item_type_value,Item_MRP_value,Outlet_Identifier_value,Outlet_Establishment_Year_value,Outlet_Size_value,Outlet_Location_type_value,Outlet_type_value]
+parameters_values = [Item_identifier_value,Item_Weight_value,Item_Fat_Content_value_main,Item_Visibility_value,Item_type_value,Item_MRP_value,Outlet_Identifier_value,Outlet_Establishment_Year_value,Outlet_Size_value,Outlet_Location_type_value,Outlet_type_value]
+#st.dataframe(parameters_values)
 if st.button("Show Result"):
     result = regressor.predict([parameters_values])
     st.success(result[0])
