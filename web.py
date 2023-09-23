@@ -23,7 +23,7 @@ regressor=XGBRFRegressor()
 regressor.fit(column_parameter,target)
 # Main page 
 st.header("BigMart Sales Prediction",divider="rainbow")
-st.image("image/WhatsApp Image 2023-09-23 at 3.29.51 PM.jpeg")
+st.image(r"image/WhatsApp Image 2023-09-23 at 3.29.51 PM.jpeg")
 st.subheader("**:red[Build by Shiv Kumar]**")
 st.divider()
 # Sidebar
